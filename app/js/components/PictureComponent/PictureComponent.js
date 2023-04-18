@@ -1,11 +1,23 @@
-class Component {
-  element;
+import Component from "../Component/Component";
 
-  constructor(parentElement, tagName) {
-    this.element = document.createElement(tagName);
+class PictureComponent extends Component {
+  alternativeText;
+  source;
+  className;
 
-    parentElement.appendChild(this.element);
+  constructor(parentElement, alternativeText, source, className) {
+    super(parentElement, "img");
+    this.alternativeText = alternativeText;
+    this.source = source;
+    this.className = className;
+    this.render();
+  }
+
+  render() {
+    this.element.alt(this.alternativeText);
+    this.element.src(this.source);
+    this.element.classList.add(this.className);
   }
 }
 
-export default Component;
+export default PictureComponent;
