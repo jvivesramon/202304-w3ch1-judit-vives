@@ -1,22 +1,24 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
 class PictureComponent extends Component {
-  alternativeText;
-  source;
+  src;
+  alt;
+  width;
+  height;
   className;
 
-  constructor(parentElement, alternativeText, source, className) {
+  constructor(parentElement, src, alt, className) {
     super(parentElement, "img");
-    this.alternativeText = alternativeText;
-    this.source = source;
+    this.src = src;
+    this.alt = alt;
     this.className = className;
     this.render();
   }
 
   render() {
-    this.element.alt(this.alternativeText);
-    this.element.src(this.source);
     this.element.classList.add(this.className);
+    this.element.setAttribute("src", this.src);
+    this.element.setAttribute("alt", this.alt);
   }
 }
 
