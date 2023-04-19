@@ -6,8 +6,10 @@ class ButtonComponent extends Component {
 
   constructor(parentElement, text, className) {
     super(parentElement, "button");
+
     this.text = text;
     this.className = className;
+
     this.render();
   }
 
